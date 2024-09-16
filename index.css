@@ -1,0 +1,41 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  min-height: 100%;
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+.observer {
+  height: 4rem;
+}
+
+#virtual-list {
+  width: 100%;
+  min-height: 0;
+  flex: 1;
+}
+
+.article {
+  position: absolute;
+  overflow: hidden;
+  left: 0;
+  right: 0;
+}
+
+.article__title {
+  width: fit-content;
+  max-width: 100%;
+  display: block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}

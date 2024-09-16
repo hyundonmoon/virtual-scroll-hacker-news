@@ -3,14 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="./index.css"></link>
+    <title>Virtual Scroll Hacker News</title>
+    <link rel="stylesheet" href="./index.css" />
   </head>
   <body>
     <div class="container">
-      <div class="observer" id="scroll-up-observer">up</div>
-      <main id="virtual-list"></main>
-      <div class="observer" id="scroll-down-observer">down</div>
+      <header>
+        <strong>Virtual Scroll Hacker News</strong>
+      </header>
+
+      <div class="content">
+        <div class="observer" id="scroll-up-observer"></div>
+        <main id="virtual-list"></main>
+        <div class="observer" id="scroll-down-observer"></div>
+      </div>
     </div>
 
     <template id="article__template">

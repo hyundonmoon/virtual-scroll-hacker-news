@@ -1,4 +1,4 @@
-import { getArticles } from "./utils.js";
+import { getArticles, timeAgo } from "./utils.js";
 
 const MARGIN = 16;
 const MAX_NUMBER_OF_NODES = 40;
@@ -170,15 +170,20 @@ export class VirtualScrollHackerList {
       throw new Error("populateArticleTemplate - Element or article missing.");
     }
 
-    const title = element.querySelector(".article__title");
-    title.textContent = `Page ${page} - ${article.title}`;
-    title.setAttribute(
+    const { title, createdAt, points, numComments } = article;
+
+    const titleElement = element.querySelector(".article__title");
+    titleElement.textContent = `${title}`;
+    titleElement.setAttribute(
       "href",
       article.url ?? `https://news.ycombinator.com/item?id=${article.id}`
     );
 
     const details = element.querySelector(".article__details");
-    details.textContent = ``;
+    const ago = timeAgo(createdAt);
+    details.textContent = `Page ${
+      page + 1
+    } | ${points} points | ${ago} | ${numComments} comments`;
 
     element.dataset.page = page;
 

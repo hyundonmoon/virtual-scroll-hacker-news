@@ -4,18 +4,34 @@
   box-sizing: border-box;
 }
 
+body {
+  width: 100%;
+  margin: 8px;
+}
+
+header {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 1.25rem;
+  color: #222222;
+  line-height: 12px;
+  margin-top: 2rem;
+}
+
 .container {
-  position: relative;
-  display: flex;
-  flex-direction: column;
   width: 75%;
-  min-height: 100%;
   margin: 0 auto;
   max-width: 900px;
 }
 
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
 .observer {
-  height: 4rem;
+  height: 2rem;
 }
 
 #virtual-list {
@@ -38,4 +54,21 @@
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+}
+
+.article__details {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 7pt;
+  color: #828282;
+}
+
+@media (width <= 640px) {
+  .container {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .article {
+    right: 1rem;
+  }
 }

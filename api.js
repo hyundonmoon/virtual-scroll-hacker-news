@@ -1,4 +1,4 @@
-const BASE_URL = "http://hn.algolia.com/api/v1/search_by_date";
+const BASE_URL = "https://hn.algolia.com/api/v1/search_by_date";
 const url = new URL(BASE_URL);
 
 export async function fetchArticles(page) {
